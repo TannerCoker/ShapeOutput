@@ -3,7 +3,7 @@
 
 This is for personal learning purposes so that I can begin to learn some of the basic syntax for python and how to use github.
 If anyone looks at this code then try not to judge it too harshly as this is the first program that I thought of to make and I'm
-learning python in my own time so there are likely errors that I could've avoided to make it easier. 
+learning python in my own time so there are likely errors that I could've avoided to make it easier.
 
 This code will ask the user to select a shape to make and then for a number.
 Then it will output the shape based on the size that was inputted.
@@ -14,7 +14,7 @@ import math
 def main():
     cont = True
     choice = -1
-    print("Hello! Welcome to shape output.\n\n")
+    print("\n\nHello! Welcome to shape output.\n\n")
 
     while cont:
         print("Please select an option:\n")
