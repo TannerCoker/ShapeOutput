@@ -6,3 +6,9 @@ This is a simple project in which it is to assist me in learning some of the bas
 2) In the terminal, you will navigate to the path that you saved the file in.
 3) Type "python ShapeOutput.py" and push enter.
 4) Program is now running. In stop it, just select option 6 on the menu or close the terminal.
+
+##Known issues
+The depending on the shape that you want and the size that you give it. The program may produce a shape that is larger than what your terminal window may be. As a result you will not be able to see the shape.
+
+##Images
+![Demo image](./img/Demo.jpg)
