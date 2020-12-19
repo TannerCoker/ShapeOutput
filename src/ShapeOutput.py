@@ -12,9 +12,11 @@ def main():
         choice = choicePrompt()
         if int(choice) == 1:
             showSquare(getSizeInput())
+        elif int(choice) == 2:
+            showRect(getSizeInput())
         elif int(choice) == 6:
             cont = False
-    print("Bye!")
+    print("\nBye!")
 
 
 
@@ -65,6 +67,15 @@ def showSquare(size):
     print("\n\n")
     for x in range(int(size)):
         for y in range(int(size)):
+            print("+ ", end='')
+        print()
+    print("\n\n")
+
+#prints a rectangle of size*2size
+def showRect(size):
+    print("\n\n")
+    for x in range(int(size)):
+        for y in range(int(size)*2):
             print("+ ", end='')
         print()
     print("\n\n")
