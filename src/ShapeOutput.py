@@ -3,10 +3,13 @@ This is for testing purposes. This code will ask the user to select a shape to m
 Then it will output the shape based on the size that was inputted.
 '''
 
+import math
+
 def main():
     cont = True
     choice = -1
     print("Hello! Welcome to shape output.\n\n")
+
     while cont:
         print("Please select an option:\n")
         choice = choicePrompt()
@@ -14,6 +17,8 @@ def main():
             showSquare(getSizeInput())
         elif int(choice) == 2:
             showRect(getSizeInput())
+        elif int(choice) == 3:
+            showTriangle(getSizeInput())
         elif int(choice) == 6:
             cont = False
     print("\nBye!")
@@ -77,6 +82,29 @@ def showRect(size):
     for x in range(int(size)):
         for y in range(int(size)*2):
             print("+ ", end='')
+        print()
+    print("\n\n")
+
+#prints a triangle of size
+def showTriangle(size):
+    print("\n\n")
+    right = int(size)
+    left = int(0)
+    offset = int(math.ceil(int(size)/2))
+    if int(size)%2 == 1:
+        right = int(math.ceil(int(size)/2))+1+offset
+        left = int(math.ceil(int(size)/2))+offset
+    else:
+        right = int(int(size)/2)+1+offset
+        left = int(int(size)/2)+offset
+
+    for x in range(int(size)):
+        for y in range(left):
+            print("  ", end ='')
+        for z in range(left,right):
+            print("+ ", end='')
+        right += 1
+        left -= 1
         print()
     print("\n\n")
 
