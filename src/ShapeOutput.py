@@ -19,6 +19,8 @@ def main():
             showRect(getSizeInput())
         elif int(choice) == 3:
             showTriangle(getSizeInput())
+        elif int(choice) == 4:
+            showOctogon(getSizeInput())
         elif int(choice) == 6:
             cont = False
     print("\nBye!")
@@ -27,7 +29,7 @@ def main():
 
 #prompts user to enter a choice. displays the menu options and recieves input while testing to make sure it's valid input.
 def choicePrompt():
-    print("1) Square\n2) Rectangle\n3) Triangle\n4) Circle\n5) Diamond\n6) Exit\n\n")
+    print("1) Square\n2) Rectangle\n3) Triangle\n4) Octogon\n5) Diamond\n6) Exit\n\n")
     choice = getUserInput()
     while(not checkValidInput(choice)):
         choice = getUserInput()
@@ -105,6 +107,41 @@ def showTriangle(size):
             print("+ ", end='')
         right += 1
         left -= 1
+        print()
+    print("\n\n")
+
+#prints a octogon with the length of the sides == size
+def showOctogon(size):
+    print("\n\n")
+    side = int(size)
+    right = int(side)
+    left = int(0)
+    offset = int(math.ceil(side/2))
+    if side%2 == 1:
+        right = int(side)*2+offset
+        left = math.ceil(side/2)+offset
+    else:
+        right = int(side)*2+offset
+        left = math.ceil(side/2)+offset
+    for x in range(side):
+        for y in range(left):
+            print("  ", end='')
+        for z in range(left,right):
+            print("+ ", end='')
+        right += 1
+        left -= 1
+        print()
+    for m in range(int(math.ceil(side/2))*2-1):
+        for n in range(right):
+            print("+ ", end='')
+        print()
+    for a in range(side):
+        for b in range(left):
+            print("  ", end='')
+        for c in range(left,right):
+            print("+ ", end='')
+        right -= 1
+        left += 1
         print()
     print("\n\n")
 
