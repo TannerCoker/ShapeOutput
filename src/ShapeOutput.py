@@ -1,5 +1,11 @@
 '''
-This is for testing purposes. This code will ask the user to select a shape to make and then for a number.
+@Author Tanner Coker
+
+This is for personal learning purposes so that I can begin to learn some of the basic syntax for python and how to use github.
+If anyone looks at this code then try not to judge it too harshly as this is the first program that I thought of to make and I'm
+learning python in my own time so there are likely errors that I could've avoided to make it easier. 
+
+This code will ask the user to select a shape to make and then for a number.
 Then it will output the shape based on the size that was inputted.
 '''
 
@@ -21,6 +27,8 @@ def main():
             showTriangle(getSizeInput())
         elif int(choice) == 4:
             showOctogon(getSizeInput())
+        elif int(choice) == 5:
+            showDiamond(getSizeInput())
         elif int(choice) == 6:
             cont = False
     print("\nBye!")
@@ -144,5 +152,38 @@ def showOctogon(size):
         left += 1
         print()
     print("\n\n")
+
+#prints a diamond of height == size*2
+def showDiamond(size):
+    print("\n\n")
+    right = int(size)
+    left = int(0)
+    offset = int(math.ceil(int(size)/2))
+    if int(size)%2 == 1:
+        right = int(math.ceil(int(size)/2))+1+offset
+        left = int(math.ceil(int(size)/2))+offset
+    else:
+        right = int(int(size)/2)+1+offset
+        left = int(int(size)/2)+offset
+
+    for x in range(int(size)):
+        for y in range(left):
+            print("  ", end ='')
+        for z in range(left,right):
+            print("+ ", end='')
+        right += 1
+        left -= 1
+        print()
+
+    for a in range(int(size)+1):
+        for b in range(left):
+            print("  ", end='')
+        for c in range(left,right):
+            print("+ ", end='')
+        right -= 1
+        left += 1
+        print()
+    print("\n\n")
+
 
 main()
